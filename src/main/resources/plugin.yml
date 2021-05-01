@@ -1,0 +1,7 @@
+name: Lyscore
+version: @version@
+main: fr.foacs.mc.lyscore.Lyscore
+api-version: 1.16
+authors: [ Lehtto ]
+description: Core function and classes for Lys plugin
+website: https://foacs.ovh
