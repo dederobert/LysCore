@@ -59,11 +59,10 @@ public abstract class LysPlugin extends JavaPlugin {
   }
 
   /**
-   * Get a config identify by its name.
-   * It have to be added before plugin enabling with {@link LysPlugin#addConfig(String)}.
+   * Get a config identify by its name. It have to be added before plugin enabling with {@link
+   * LysPlugin#addConfig(String)}.
    *
    * @param name The name of the config to get.
-   *
    * @return A optional which contains the config.
    */
   public Optional<YamlConfiguration> getConfig(final String name) {
@@ -74,7 +73,6 @@ public abstract class LysPlugin extends JavaPlugin {
    * Get a data config identify by its name.
    *
    * @param name The name of the data config to get.
-   *
    * @return A optional which contains the data config.
    */
   public Optional<YamlConfiguration> getData(final String name) {
@@ -85,7 +83,6 @@ public abstract class LysPlugin extends JavaPlugin {
    * Check if data config exists.
    *
    * @param name The name of the data to check.
-   *
    * @return true if the data exist.
    */
   public boolean existsData(final String name) {
@@ -226,6 +223,7 @@ public abstract class LysPlugin extends JavaPlugin {
   }
 
   public LoggerHelper getLog() {
+
     return this.log;
   }
 }
