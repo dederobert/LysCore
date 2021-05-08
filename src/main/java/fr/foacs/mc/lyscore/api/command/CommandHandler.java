@@ -25,12 +25,11 @@ public abstract class CommandHandler implements CommandExecutor {
 
   /** {@inheritDoc} */
   @Override
-  public boolean onCommand(
-      @NotNull CommandSender sender,
-      @NotNull Command command,
-      @NotNull String label,
-      @NotNull String[] args) {
-    if (!isMatchCommandName(command) || !isMatchParamsNumber(args)) return false;
+  public boolean onCommand(@NotNull CommandSender sender,
+                           @NotNull Command command, @NotNull String label,
+                           @NotNull String[] args) {
+    if (!isMatchCommandName(command) || !isMatchParamsNumber(args))
+      return false;
 
     return handle(sender, command, label, args);
   }
@@ -52,7 +51,8 @@ public abstract class CommandHandler implements CommandExecutor {
    * @param messageKey The message's key.
    */
   protected void sendMessage(CommandSender sender, String messageKey) {
-    sender.sendMessage(plugin.getMessageHelper().getFormattedMessage(messageKey));
+    sender.sendMessage(
+        plugin.getMessageHelper().getFormattedMessage(messageKey));
   }
 
   /**
@@ -62,8 +62,10 @@ public abstract class CommandHandler implements CommandExecutor {
    * @param messageKey The message's key.
    * @param args The message arguments.
    */
-  protected void sendMessage(CommandSender sender, String messageKey, Object args) {
-    sender.sendMessage(plugin.getMessageHelper().getFormattedMessage(messageKey, args));
+  protected void sendMessage(CommandSender sender, String messageKey,
+                             Object args) {
+    sender.sendMessage(
+        plugin.getMessageHelper().getFormattedMessage(messageKey, args));
   }
 
   /**
@@ -75,8 +77,8 @@ public abstract class CommandHandler implements CommandExecutor {
   protected abstract boolean isMatchParamsNumber(String[] args);
 
   /**
-   * Delegate the handling of command to child-class. The check on command name and args number is
-   * already done.
+   * Delegate the handling of command to child-class. The check on command name
+   * and args number is already done.
    *
    * @param sender The command sender.
    * @param command The typed command.
@@ -84,6 +86,6 @@ public abstract class CommandHandler implements CommandExecutor {
    * @param args The typed args.
    * @return True if command is handled.
    */
-  protected abstract boolean handle(
-      CommandSender sender, Command command, String label, String[] args);
+  protected abstract boolean handle(CommandSender sender, Command command,
+                                    String label, String[] args);
 }
